@@ -242,9 +242,9 @@ void loadInput()
             string face;
             int int_token;
             while(ss >> face){
-                stringstream sf = stringstream(face);
+                istringstream sf(face);
                 while(std::getline(sf, token, '/')) {
-                    stringstream si = stringstream(token);
+                    istringstream si(token);
                     si >> int_token;
                     v.push_back(int_token);
                 }
