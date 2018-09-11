@@ -107,7 +107,8 @@ void drawObjMesh() {
     // draw obj mesh here
     // read vertices and face indices from vecv, vecn, vecf
     GeometryRecorder rec(vecf.size() * 3);
-    for(int i = 0; i < vecf.size(); i++){
+    int vecf_size = vecf.size();
+    for(int i = 0; i < vecf_size; i++){
         vector<unsigned> v = vecf[i];
         rec.record(vecv[v[0]-1], vecn[v[2]-1]);//a and c
         rec.record(vecv[v[3]-1], vecn[v[5]-1]);//d and f
@@ -119,7 +120,7 @@ void drawObjMesh() {
 // This function is responsible for displaying the object.
 void drawScene()
 {
-    //drawObjMesh();
+    drawObjMesh();
     drawTeapot();
 }
 
